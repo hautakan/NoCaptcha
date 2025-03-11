@@ -1,0 +1,1 @@
+This file contains a piece of JavaScript that will copy a tiny script to your clipboard. If the script is executed (as the verification suggests), it will pop-up a harmless warning. The NoCaptcha method is used in pshishing to fool victims to initiate downloads for malicious files. 
